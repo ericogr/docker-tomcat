@@ -1,11 +1,19 @@
 # docker-maven
-Dockerfile to build an image with Tomcat 8.0.21 - Oracle JDK8 (latest)
+A Dockerfile that produces a container that will run Tomcat 8.0.21
+
+#Username and password
+docker/docker
+
+#Image Creation
+
+This example creates the image with the tag ericogr/tomcat:8.0.21, but you can change this to use your own username.
 
 ```sh
-#docker run -d -p 8080:8080 ericogr/tomcat:8.0.21
+$ docker build -t="ericogr/tomcat:8.0.21" .
 ```
-To run:
+
+#Container Creation / Running
 
 ```sh
-#docker run -it -p 8080:8080 ericogr/tomcat:8.0.21
+$ docker run -d -p 8080:8080 ericogr/tomcat:8.0.21
 ```
