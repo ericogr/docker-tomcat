@@ -20,16 +20,17 @@ RUN \
   rm -rf /var/cache/oracle-jdk8-installer
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+ENV TOMCAT_VERSION 8.0.22
 ENV TOMCAT_DIR /opt/apache-tomcat
-ENV TOMCAT_VERSION apache-tomcat-8.0.21
-ENV TOMCAT_FILENAME $TOMCAT_VERSION.tar.gz
+ENV TOMCAT_NAME apache-tomcat-$TOMCAT_VERSION
+ENV TOMCAT_FILENAME $TOMCAT_NAME.tar.gz
 
 #instala o tomcat
 RUN \
-  wget http://ftp.unicamp.br/pub/apache/tomcat/tomcat-8/v8.0.21/bin/$TOMCAT_FILENAME && \
+  wget http://ftp.unicamp.br/pub/apache/tomcat/tomcat-8/v$TOMCAT_VERSION/bin/$TOMCAT_FILENAME && \
   tar zxvf $TOMCAT_FILENAME && \
-  mv $TOMCAT_VERSION /opt && \
-  ln -s /opt/$TOMCAT_VERSION $TOMCAT_DIR && \
+  mv $TOMCAT_NAME /opt && \
+  ln -s /opt/$TOMCAT_NAME $TOMCAT_DIR && \
   rm $TOMCAT_FILENAME
 
 ADD ["tomcat-users.xml", "$TOMCAT_DIR/conf/tomcat-users.xml"]
