@@ -1,5 +1,5 @@
 #!/bin/bash
-IMAGE_NAME=ericogr/tomcat:8.0.23
+IMAGE_NAME=ericogr/tomcat:8.0.24
 
 echo "====================="
 
