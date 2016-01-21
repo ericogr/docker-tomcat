@@ -20,7 +20,7 @@ RUN \
   rm -rf /var/cache/oracle-jdk8-installer
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
-ENV TOMCAT_VERSION 8.0.24
+ENV TOMCAT_VERSION 8.0.30
 ENV TOMCAT_DIR /opt/apache-tomcat
 ENV TOMCAT_NAME apache-tomcat-$TOMCAT_VERSION
 ENV TOMCAT_FILENAME $TOMCAT_NAME.tar.gz
