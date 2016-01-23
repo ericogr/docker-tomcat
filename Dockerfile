@@ -2,7 +2,7 @@
 #
 # VERSION 1.0
 
-FROM ubuntu:14.04.2
+FROM ubuntu:14.04.3
 MAINTAINER EricoGR <ericomercial@yahoo.com.br>
 
 #instala o mínimo para instalação dos pacotes
