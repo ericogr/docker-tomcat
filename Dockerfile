@@ -1,16 +1,15 @@
 # docker-tomcat
 #
-# VERSION 1.0
 
 FROM ubuntu:14.04.3
 MAINTAINER EricoGR <ericomercial@yahoo.com.br>
 
-#instala o mínimo para instalação dos pacotes
+#minimum to install packages
 RUN \
   apt-get update && \
   apt-get install -y software-properties-common
 
-#instalação do jdk
+#jdk installation
 RUN \
   echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
   add-apt-repository -y ppa:webupd8team/java && \
@@ -25,7 +24,7 @@ ENV TOMCAT_DIR /opt/apache-tomcat
 ENV TOMCAT_NAME apache-tomcat-$TOMCAT_VERSION
 ENV TOMCAT_FILENAME $TOMCAT_NAME.tar.gz
 
-#instala o tomcat
+#tomcat installation
 RUN \
   wget http://ftp.unicamp.br/pub/apache/tomcat/tomcat-8/v$TOMCAT_VERSION/bin/$TOMCAT_FILENAME && \
   tar zxvf $TOMCAT_FILENAME && \
